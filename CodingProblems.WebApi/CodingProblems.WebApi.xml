@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CodingProblems.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:CodingProblems.WebApi.Controllers.EmployeeController.Get">
+            <summary>
+            Gets the list of all Employees.
+            </summary>
+            <returns>The list of Employees.</returns>
+        </member>
+    </members>
+</doc>
