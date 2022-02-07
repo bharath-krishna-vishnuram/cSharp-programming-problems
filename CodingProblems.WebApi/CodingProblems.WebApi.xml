@@ -4,11 +4,119 @@
         <name>CodingProblems.WebApi</name>
     </assembly>
     <members>
-        <member name="M:CodingProblems.WebApi.Controllers.EmployeeController.Get">
+        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.GoodPair(System.Int32[],System.Int32)">
             <summary>
-            Gets the list of all Employees.
+            Given an array A and a integer B. A pair(i,j) in the array is a good pair if i!=j and (A[i]+A[j]==B). 
+            Check if any good pair exist or not..
             </summary>
-            <returns>The list of Employees.</returns>
+            <returns>1 if good pair exists and 0 if not.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.RotateRight(System.Int32[],System.Int32)">
+            <summary>
+            You are given an integer array A and an integer B. You have to print the same array after rotating it B times towards right.
+            </summary>
+            <returns>Array after rotations</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.RotateLeft(System.Int32[],System.Int32)">
+            <summary>
+            You are given an integer array A and an integer B. You have to print the same array after rotating it B times towards Left.
+            </summary>
+            <returns>Array after rotations</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.LinearSearch(System.Int32[],System.Int32)">
+            <summary>
+            Given array A and an integer B. You have to tell whether B is present in array A or not.
+            </summary>
+            <returns>1 if element exists and 0 if not.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.MaxElementPosition(System.Int32[],System.Int32)">
+            <summary>
+            Little Ponny is given an array, A, of N integers. In a particular operation, he can set any element of the array equal to -1.
+            He wants your help for finding out the minimum number of operations required 
+            such that the maximum element of the resulting array is B.If it is not possible then return -1.
+            </summary>
+            <returns>number of operation required if possible and -1 if not.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BasicDsaController.PerfectNumber(System.Int32)">
+            <summary>
+            Perfect number is a positive integer which is equal to the sum of its proper positive divisors.
+            Check if input is Perfect or not..
+            </summary>
+            <returns>true if Perfect Number and false if not.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BasicDsaController.PerfectSquareRoot(System.Int32)">
+            <summary>
+            Given a number A. Return square root of the number if it is perfect square otherwise return -1.
+            </summary>
+            <returns>Perfect square root if exists and -1 if not.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BasicDsaController.ArmstrongNumber(System.Int32)">
+            <summary>
+            Armstrong number is a positive integer with sum of cubes of each digit of the number is equal to the number itself.
+            Check if input is Armstrong or not..
+            </summary>
+            <returns>true if Armstrong Number and false if not.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BitWiseController.SwitchLastHighBit(System.Int32)">
+            <summary>
+            Switch the least significant high bit in input integer.
+            </summary>
+            <returns>Binary represenation of input and integer after switching.</returns>
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.CarryForwardController.SubsequencesAG(System.String)">
+            <summary>
+            You have given a string A having Uppercase English letters.
+            You have to find that how many times subsequence "AG" is there in the given string.
+            NOTE: Return the answer modulo 109 + 7 as the answer can be very large
+            </summary>
+            <returns>Return an integer denoting the number of subsequences.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.CarryForwardController.ClosestMinMax(System.Int32[])">
+            <summary>
+            Given an array A. Find the size of the smallest subarray such that 
+            it contains atleast one occurrence of the maximum value of the array
+            and atleast one occurrence of the minimum value of the array.
+            </summary>
+            <returns>Return length of the smallest subarray which has atleast one occurrence of minimum and maximum element of the array.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.PrefixSumController.MaximumPossibleSum(System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Given an integer array A of size N.
+            You can pick B elements from either left or right end of the array A to get maximum sum.
+            Find and return this maximum possible sum
+            </summary>
+            <returns>Return an integer denoting the maximum possible sum of elements you picked.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.PrefixSumController.RangeSum(System.Int32[],System.Int32[][])">
+            <summary>
+            You are given an integer array A of length N.
+            You are also given a 2D integer array B with dimensions M x 2, where each row denotes a[L, R] query.
+            For each query, you have to find the sum of all elements from L to R indices in A (1 - indexed).
+            </summary>
+            <returns>Return an integer array of length M where ith element is the answer for ith query in B.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.PrefixSumController.EqualIndexedSum(System.Int32[])">
+            <summary>
+            Given an array, arr[] of size N, the task is to find the count of array indices such that 
+            removing an element from these indices makes the sum of even-indexed and odd-indexed array elements equal
+            </summary>
+            <returns>count of array indices.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.PrefixSumController.EquilibriumIndex(System.Int32[],System.Int32)">
+            <summary>
+            Find Equilibrium index of an array, that is an index such that 
+            the sum of elements at lower indexes is equal to the sum of elements at higher indexes.
+            </summary>
+            <returns>equilibrium index of the given array. If no such index is found then return -1.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.PrefixSumController.SortColors(System.Int32[])">
+            <summary>
+            Given an array with n objects colored red, white or blue, 
+            sort them so that objects of the same color are adjacent, 
+            with the colors in the order red, white and blue
+            Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
+            </summary>
+            <returns>integer denoting the minimum time to make all elements equal..</returns>   
         </member>
     </members>
 </doc>

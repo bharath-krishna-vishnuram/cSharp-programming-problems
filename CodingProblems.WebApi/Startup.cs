@@ -61,7 +61,8 @@ namespace CodingProblems.WebApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllers();
             });
         }
     }

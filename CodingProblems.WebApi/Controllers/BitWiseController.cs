@@ -3,19 +3,24 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using System.Threading.Tasks;
 
 namespace CodingProblems.WebApi.Controllers
 {
-    [Route("api/[controller]/[action]")]
-    [ApiController]
-    public class BitWiseController : Controller
+    //[Route("api/[controller]/[action]")]
+    //[ApiController]
+    public class BitWiseController : CodingControllerBase
     {
+        /// <summary>
+        /// Switch the least significant high bit in input integer.
+        /// </summary>
+        /// <returns>Binary represenation of input and integer after switching.</returns>
         [HttpGet]
-        public Tuple<string, string> SwitchLastHighBit(int aXorb)
+        public Tuple<string, string> SwitchLastHighBit(int input)
         {
-            var t = (aXorb & (aXorb - 1));
-            return new Tuple<string, string>(IntToBinary(aXorb), IntToBinary(t));
+            var t = (input & (input - 1));
+            return new Tuple<string, string>(IntToBinary(input), IntToBinary(t));
 
             //return (aXorb & (aXorb - 1)) ^ aXorb;
         }
@@ -45,5 +50,6 @@ namespace CodingProblems.WebApi.Controllers
             }
             return binValue;
         }
+
     }
 }
