@@ -65,19 +65,47 @@
         </member>
         <member name="M:CodingProblems.WebApi.Controllers.CarryForwardController.SubsequencesAG(System.String)">
             <summary>
-            You have given a string A having Uppercase English letters.
+            In a string A having Uppercase letters.
             You have to find that how many times subsequence "AG" is there in the given string.
-            NOTE: Return the answer modulo 109 + 7 as the answer can be very large
             </summary>
-            <returns>Return an integer denoting the number of subsequences.</returns>   
+            <returns>Return an integer denoting the number of subsequences modulo 109 + 7.</returns>   
         </member>
         <member name="M:CodingProblems.WebApi.Controllers.CarryForwardController.ClosestMinMax(System.Int32[])">
             <summary>
-            Given an array A. Find the size of the smallest subarray such that 
-            it contains atleast one occurrence of the maximum value of the array
-            and atleast one occurrence of the minimum value of the array.
+            Given an array A. Find the size of the smallest subarray with
+            atleast one occurrence of the maximum value 
+            and the minimum value of the array.
             </summary>
-            <returns>Return length of the smallest subarray which has atleast one occurrence of minimum and maximum element of the array.</returns>   
+            <returns>Return length of the smallest subarray which has 
+            atleast one occurrence of minimum and maximum element of the array.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.CarryForwardController.SwitchBulbs(System.Int32[])">
+            <summary>
+            Given an initial state of all bulbs, 
+            find the minimum number of switches you have to press to turn on all the bulbs
+            </summary>
+            <returns>integer representing the minimum number of switches required.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.CarryForwardController.AmazingSubarrays(System.String)">
+            <summary>
+            find all the amazing substrings of S.
+            Amazing Substring is one that starts with a vowel(a, e, i, o, u, A, E, I, O, U).
+            </summary>
+            <returns>integer X mod 10003, here X is number of Amazing Substrings in given string.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.CarryForwardController.EvenSubArrays(System.Int32[])">
+            <summary>
+            In integer array A, decide whether it is possible to divide the array into 
+            one or more subarrays of even length such that first and last element of all subarrays will be even.
+            </summary>
+            <returns>Return "YES" if it is possible otherwise return "NO" (without quotes).</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.CarryForwardController.LeadersInArray(System.Int32[])">
+            <summary>
+            In integer array A,  find all the leaders in the array A.
+            An element is leader if it is strictly greater than all the elements to its right side.
+            </summary>
+            <returns>integer array denoting all the leader elements of the array.</returns>   
         </member>
         <member name="M:CodingProblems.WebApi.Controllers.PrefixSumController.MaximumPossibleSum(System.Collections.Generic.List{System.Int32},System.Int32)">
             <summary>
@@ -117,6 +145,42 @@
             Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
             </summary>
             <returns>integer denoting the minimum time to make all elements equal..</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.SubArraysController.MaxSubArray(System.Int32[])">
+            <summary>
+            Find the contiguous non empty subarray within an array, A of length N which has the largest sum
+            </summary>
+            <returns>Integer representing the maximum possible sum of the contiguous subarray.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.SubArraysController.SubarraySum(System.Int32[])">
+            <summary>
+            In an integer array A find the sum of all subarray sums of A
+            </summary>
+            <returns>integer denoting the sum of all subarray sums of the given array.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.SubArraysController.LeastSubarrayAverage(System.Int32[],System.Int32)">
+            <summary>
+            In an integer array A, Find the subarray with least average of size k
+            </summary>
+            <returns>index of the first element of the subarray of size k that has least average.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.SubArraysController.MaxSubarray(System.Int32,System.Int32[])">
+            <summary>
+            In integer array C. Find a subarray (contiguous elements) so that 
+            the sum of contiguous elements is maximum.
+            But the sum must not exceed B
+            </summary>
+            <returns>Returns count of good subarrays in A.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.SubArraysController.AlternatingSubarray(System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            In array A of 0 and 1's, and an integer B.
+            Find all the indices as centre of 2 * B + 1 length 0-1 of alternating subarray.
+            Alternating array contains only 0's and 1's, and having no adjacent 0's or 1's.
+            </summary>
+            <returns>Return an integer array containing indices(0-based) in sorted order. 
+            If no such index exists, return an empty integer array.</returns>   
+            For e.g.arrays[0, 1, 0, 1], [1, 0] and[1] are 0-1 alternating, while [1, 1] and[0, 1, 0, 0, 1] are not.
         </member>
     </members>
 </doc>
