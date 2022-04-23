@@ -69,9 +69,9 @@ namespace CodingProblems.WebApi.Controllers
         public int EqualIndexedSum(int[] A)
         {
             int n = A.Count();
-            long[] oddSum = new long[n];//A.clone();
-            long[] evenSum = new long[n];//A.clone();
-            evenSum[0] = (long)A[0];
+            long[] oddSum = new long[n];
+            long[] evenSum = new long[n];
+            evenSum[0] = A[0];
             oddSum[0] = 0;
             int count = 0;
             for (int i = 1; i < n; i++)
@@ -81,20 +81,17 @@ namespace CodingProblems.WebApi.Controllers
             }
             for (int i = 0; i < n; i++)
             {
-                long s1 = i != 0 ? getSum(oddSum, 0, i - 1) : 0;
-                long s2 = i != 0 ? getSum(evenSum, 0, i - 1) : 0;
-                long s3 = getSum(oddSum, i + 1, n - 1);
-                long s4 = getSum(evenSum, i + 1, n - 1);
-                if (s1 + s4 == s2 + s3)
+                long leftOdd   = i != 0 ? getSum(oddSum, 0, i - 1) : 0;
+                long leftEven  = i != 0 ? getSum(evenSum, 0, i - 1) : 0;
+                long rightOdd  = getSum(oddSum, i + 1, n - 1);
+                long rightEven = getSum(evenSum, i + 1, n - 1);
+                if (leftOdd + rightEven == leftEven + rightOdd)
                     count++;
                 // System.out.println(i + " " + s1+ " " + s2 + " " +s3 + " " +s4 + " " + oddSum[i] + " " + evenSum[i]);
             }
             return count;
         }
-        private long getSum(long[] pf, int l, int r)
-        {
-            return pf[r] - (l == 0 ? 0 : pf[l - 1]);
-        }
+        private long getSum(long[] pf, int l, int r) => pf[r] - (l == 0 ? 0 : pf[l - 1]);
 
         /// <summary>
         /// Find Equilibrium index of an array, that is an index such that 
@@ -108,12 +105,13 @@ namespace CodingProblems.WebApi.Controllers
             int[] sum = new int[n];  A.CopyTo(sum, 0);
             for (int i = 1; i < n; i++)
                 sum[i] += sum[i - 1];// + a[i]
+            int totalSum = sum[n - 1];
             for (int i = 0; i < n; i++)
             {
-                int s_i_1 = i != 0 ? sum[i - 1] : 0;
-                if (s_i_1 == sum[n - 1] - sum[i])
+                int leftSum = i != 0 ? sum[i - 1] : 0;
+                int rightSum = totalSum - sum[i];
+                if (leftSum ==  rightSum)
                     return i;
-                // System.out.println(sum[0]+ " " + s_1 + " " + sum[n-1] + " " + sum[i]);
             }
             return -1;
         }

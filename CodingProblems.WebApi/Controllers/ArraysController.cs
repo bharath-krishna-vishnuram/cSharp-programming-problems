@@ -12,26 +12,26 @@ namespace CodingProblems.WebApi.Controllers
 
         /// <summary>
         /// Given an array A and a integer B. A pair(i,j) in the array is a good pair if i!=j and (A[i]+A[j]==B). 
-        /// Check if any good pair exist or not..
+        /// Check if any good pair exist or not.
         /// </summary>
         /// <returns>1 if good pair exists and 0 if not.</returns>   
         [HttpPost]
-        public int GoodPair([FromQuery]int[] A, int B)
+        public int TwoSum([FromQuery]int[] A, int B)
         {
-            int n = A.Count();
+            int n = A.Length;
+            HashSet<int> visited = new HashSet<int>();
             for (int i = 0; i < n; i++)
             {
-                for (int j = i + 1; j < n; j++)
-                {
-                    if (A[i] + A[j] == B)
-                        return 1;
-                }
+                if(visited.Contains(A[i]))
+                    return 1;
+                visited.Add(B-A[i]);
             }
             return 0;
         }
 
         /// <summary>
-        /// You are given an integer array A and an integer B. You have to print the same array after rotating it B times towards right.
+        /// You are given an integer array A and an integer B. 
+        /// You have to print the same array after rotating it B times towards right.
         /// </summary>
         /// <returns>Array after rotations</returns>   
         [HttpPost]
@@ -66,32 +66,93 @@ namespace CodingProblems.WebApi.Controllers
         }
 
         /// <summary>
-        /// Given array A and an integer B. You have to tell whether B is present in array A or not.
-        /// </summary>
-        /// <returns>1 if element exists and 0 if not.</returns>   
-        [HttpPost]
-        public int LinearSearch(int[] A, int B)
-        {
-            int n = A.Count();
-            for (int i = 0; i < n; i++)
-            {
-                if (A[i] == B)
-                    return 1;
-            }
-            return 0;
-        }
-
-        /// <summary>
-        /// Little Ponny is given an array, A, of N integers. In a particular operation, he can set any element of the array equal to -1.
-        /// He wants your help for finding out the minimum number of operations required 
-        /// such that the maximum element of the resulting array is B.If it is not possible then return -1.
+        /// Given an array A consisting of heights of Christmas trees and 
+        /// array B of the same size consisting of the cost of each of the trees.
+        /// Return an integer denoting the minimum cost of choosing 3 trees 
+        /// whose heights are strictly in increasing order, if not possible, -1.
         /// </summary>
         /// <returns>number of operation required if possible and -1 if not.</returns>   
         [HttpPost]
-        public int MaxElementPosition(int[] A, int B)
+        public int ChristmasTreesCost(int[] A, [FromQuery] int[] B)
         {
-            Array.Sort(A, (a, b) => b.CompareTo(a));
-            return Array.IndexOf(A, B);
+            int n = A.Length;
+            int minCost = int.MaxValue;
+            for (int i = 1; i < n - 1; i++)
+            {
+                int smaller = Int32.MaxValue, larger = Int32.MaxValue;
+                for (int j = 0; j < i; j++)
+                    if (A[i] > A[j])
+                        smaller = Math.Min(smaller, B[j]);
+                for (int j = i + 1; j < n; j++)
+                    if (A[i] < A[j])
+                        larger = Math.Min(larger, B[j]);
+                if (smaller != Int32.MaxValue && larger != Int32.MaxValue)
+                    minCost = Math.Min(minCost, smaller + larger + B[i]);
+            }
+            return minCost == Int32.MaxValue ? -1 : minCost;
+        }
+
+        /// <summary>
+        /// Given a binary string A. It is allowed to do at most one swap between any 0 and 1.
+        /// </summary>
+        /// <returns>Return the length of the longest consecutive 1’s that can be achieved.</returns>   
+        [HttpPost]
+        public int LongestConsecutiveOnes(string A)
+        {
+            int l = 0, ans = 0, zeroCount = 0, n = A.Count();
+            for (int i = 0; i < n; i++)
+            {
+                if (A[i] == '0')
+                {
+                    zeroCount++;
+                    if (zeroCount == 1)
+                        l = i;
+                }
+            }
+            if (zeroCount < 2)
+                return n - zeroCount;
+            for (int i = l; i < n; i++)
+            {
+                if (A[i] == '0')
+                {
+                    int j = i + 1;
+                    while (++j < n && A[j] != '0');
+                    var r = j - i - 1;
+                    var extraOne = (l + r < (n - zeroCount)) ? 1 : 0;
+                    ans = Math.Max(ans, l + r + extraOne);
+                    l = r;
+                    if (r != 0)
+                        i = j-1;
+                }
+            }
+            return ans;
+        }
+
+        /// <summary>
+        /// Given an array of integers A, of size N.maximum size subarray of A having only non-negative elements.
+        /// </summary>
+        /// <returns>Return the maximum size subarray of A having only non-negative elements.</returns>   
+        [HttpPost]
+        public List<int> MaximumPositivity(List<int> A)
+        {
+            int beg = 0, end = -1, tempBeg = 0;
+
+            for (int i = 0; i <= A.Count; i++)
+            {
+                if (i == A.Count || A[i] < 0)
+                {
+                    int tempEnd = i - 1;
+                    if (tempEnd - tempBeg > end - beg)
+                    {
+                        end = tempEnd;
+                        beg = tempBeg;
+                    }
+                    while (++i < A.Count && A[i] < 0) ;
+                    tempBeg = i;
+                }
+            }
+            var result = A.GetRange(beg, end - beg + 1);
+            return result;
         }
     }
 }

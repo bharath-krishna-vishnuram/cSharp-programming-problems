@@ -15,7 +15,7 @@ namespace CodingProblems.WebApi.Controllers
         /// </summary>
         /// <returns>Integer representing the maximum possible sum of the contiguous subarray.</returns>   
         [HttpPost]
-        public int MaxSubArray(int[] A)
+        public int MaxSubArraySum(int[] A)
         {
             int maxSum = A[0];
             int currSum = A[0];
@@ -32,7 +32,7 @@ namespace CodingProblems.WebApi.Controllers
         /// </summary>
         /// <returns>integer denoting the sum of all subarray sums of the given array.</returns>   
         [HttpPost]
-        public long SubarraySum(int[] A)
+        public long AllSubarraySum(int[] A)
         {
             int n = A.Length;
             long overallSum = 0;

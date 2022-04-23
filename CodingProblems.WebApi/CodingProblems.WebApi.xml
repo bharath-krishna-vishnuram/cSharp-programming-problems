@@ -4,16 +4,17 @@
         <name>CodingProblems.WebApi</name>
     </assembly>
     <members>
-        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.GoodPair(System.Int32[],System.Int32)">
+        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.TwoSum(System.Int32[],System.Int32)">
             <summary>
             Given an array A and a integer B. A pair(i,j) in the array is a good pair if i!=j and (A[i]+A[j]==B). 
-            Check if any good pair exist or not..
+            Check if any good pair exist or not.
             </summary>
             <returns>1 if good pair exists and 0 if not.</returns>   
         </member>
         <member name="M:CodingProblems.WebApi.Controllers.ArraysController.RotateRight(System.Int32[],System.Int32)">
             <summary>
-            You are given an integer array A and an integer B. You have to print the same array after rotating it B times towards right.
+            You are given an integer array A and an integer B. 
+            You have to print the same array after rotating it B times towards right.
             </summary>
             <returns>Array after rotations</returns>   
         </member>
@@ -23,45 +24,26 @@
             </summary>
             <returns>Array after rotations</returns>   
         </member>
-        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.LinearSearch(System.Int32[],System.Int32)">
+        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.ChristmasTreesCost(System.Int32[],System.Int32[])">
             <summary>
-            Given array A and an integer B. You have to tell whether B is present in array A or not.
-            </summary>
-            <returns>1 if element exists and 0 if not.</returns>   
-        </member>
-        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.MaxElementPosition(System.Int32[],System.Int32)">
-            <summary>
-            Little Ponny is given an array, A, of N integers. In a particular operation, he can set any element of the array equal to -1.
-            He wants your help for finding out the minimum number of operations required 
-            such that the maximum element of the resulting array is B.If it is not possible then return -1.
+            Given an array A consisting of heights of Christmas trees and 
+            array B of the same size consisting of the cost of each of the trees.
+            Return an integer denoting the minimum cost of choosing 3 trees 
+            whose heights are strictly in increasing order, if not possible, -1.
             </summary>
             <returns>number of operation required if possible and -1 if not.</returns>   
         </member>
-        <member name="M:CodingProblems.WebApi.Controllers.BasicDsaController.PerfectNumber(System.Int32)">
+        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.LongestConsecutiveOnes(System.String)">
             <summary>
-            Perfect number is a positive integer which is equal to the sum of its proper positive divisors.
-            Check if input is Perfect or not..
+            Given a binary string A. It is allowed to do at most one swap between any 0 and 1.
             </summary>
-            <returns>true if Perfect Number and false if not.</returns>   
+            <returns>Return the length of the longest consecutive 1’s that can be achieved.</returns>   
         </member>
-        <member name="M:CodingProblems.WebApi.Controllers.BasicDsaController.PerfectSquareRoot(System.Int32)">
+        <member name="M:CodingProblems.WebApi.Controllers.ArraysController.MaximumPositivity(System.Collections.Generic.List{System.Int32})">
             <summary>
-            Given a number A. Return square root of the number if it is perfect square otherwise return -1.
+            Given an array of integers A, of size N.maximum size subarray of A having only non-negative elements.
             </summary>
-            <returns>Perfect square root if exists and -1 if not.</returns>   
-        </member>
-        <member name="M:CodingProblems.WebApi.Controllers.BasicDsaController.ArmstrongNumber(System.Int32)">
-            <summary>
-            Armstrong number is a positive integer with sum of cubes of each digit of the number is equal to the number itself.
-            Check if input is Armstrong or not..
-            </summary>
-            <returns>true if Armstrong Number and false if not.</returns>   
-        </member>
-        <member name="M:CodingProblems.WebApi.Controllers.BitWiseController.SwitchLastHighBit(System.Int32)">
-            <summary>
-            Switch the least significant high bit in input integer.
-            </summary>
-            <returns>Binary represenation of input and integer after switching.</returns>
+            <returns>Return the maximum size subarray of A having only non-negative elements.</returns>   
         </member>
         <member name="M:CodingProblems.WebApi.Controllers.CarryForwardController.SubsequencesAG(System.String)">
             <summary>
@@ -146,13 +128,13 @@
             </summary>
             <returns>integer denoting the minimum time to make all elements equal..</returns>   
         </member>
-        <member name="M:CodingProblems.WebApi.Controllers.SubArraysController.MaxSubArray(System.Int32[])">
+        <member name="M:CodingProblems.WebApi.Controllers.SubArraysController.MaxSubArraySum(System.Int32[])">
             <summary>
             Find the contiguous non empty subarray within an array, A of length N which has the largest sum
             </summary>
             <returns>Integer representing the maximum possible sum of the contiguous subarray.</returns>   
         </member>
-        <member name="M:CodingProblems.WebApi.Controllers.SubArraysController.SubarraySum(System.Int32[])">
+        <member name="M:CodingProblems.WebApi.Controllers.SubArraysController.AllSubarraySum(System.Int32[])">
             <summary>
             In an integer array A find the sum of all subarray sums of A
             </summary>
@@ -181,6 +163,62 @@
             <returns>Return an integer array containing indices(0-based) in sorted order. 
             If no such index exists, return an empty integer array.</returns>   
             For e.g.arrays[0, 1, 0, 1], [1, 0] and[1] are 0-1 alternating, while [1, 1] and[0, 1, 0, 0, 1] are not.
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.TwoDimensionalArraysController.SpiralOrderMatrix(System.Int32)">
+            <summary>
+            Given an integer A, generate a square matrix filled with elements from 1 to A2 in spiral order.
+            </summary>
+            <returns>IntegerReturn a 2-D matrix which consists of the elements in spiral order.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.TwoDimensionalArraysController.RotateMatrix(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            You are given a n x n 2D matrix A representing an image, Rotate the image by 90 degrees 
+            </summary>
+            <returns>Return the 2D rotated matrix.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.TwoDimensionalArraysController.ZeroRowColumnConvert(System.Int32[][])">
+            <summary>
+            You are given a n x n 2D matrix input, make all the elements in a row or column zero if the A[i][j] = 0
+            </summary>
+            <returns>Return the 2D rotated matrix.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BasicsController.fun(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns>.</returns>
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BitWiseController.SwitchLastHighBit(System.Int32)">
+            <summary>
+            Switch the least significant high bit in input integer.
+            </summary>
+            <returns>Binary represenation of input and integer after switching.</returns>
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BitWiseController.SingleNumber(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Given an array of integers A, every element appears twice except for one. Find .
+            </summary>
+            <returns>Returns that integer that occurs once.</returns>
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BasicDsaController.PerfectNumber(System.Int32)">
+            <summary>
+            Perfect number is a positive integer which is equal to the sum of its proper positive divisors.
+            Check if input is Perfect or not..
+            </summary>
+            <returns>true if Perfect Number and false if not.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BasicDsaController.PerfectSquareRoot(System.Int32)">
+            <summary>
+            Given a number A. Return square root of the number if it is perfect square otherwise return -1.
+            </summary>
+            <returns>Perfect square root if exists and -1 if not.</returns>   
+        </member>
+        <member name="M:CodingProblems.WebApi.Controllers.BasicDsaController.ArmstrongNumber(System.Int32)">
+            <summary>
+            Armstrong number is a positive integer with sum of cubes of each digit of the number is equal to the number itself.
+            Check if input is Armstrong or not..
+            </summary>
+            <returns>true if Armstrong Number and false if not.</returns>   
         </member>
     </members>
 </doc>
